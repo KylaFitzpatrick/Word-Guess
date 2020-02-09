@@ -16,7 +16,7 @@ h1{
     color: green;
 }
 
-h3{
+#game-section p{
     font-family: 'Chicle', cursive;
     font-size: 30px;
 }
@@ -26,6 +26,9 @@ h3{
     width: 500px;
     margin: 0 auto;
 
+}
+#animal-choice-text{
+    display:none;
 }
 
 

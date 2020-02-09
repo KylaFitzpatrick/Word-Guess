@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,34 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Chicle&display=swap" rel="stylesheet">
-    <title>Animal Hangman</title>
+    <link type="text/js" src="game.js">
+    <title>Word Guess Game</title>
 </head>
+
 <body>
     <header>
         <div class="container">
             <div id="game">
                 <img src="assets/images/word-guess.png" alt="Word Guess">
-            <h1>Animal Style</h1>
+                <h1>Animal Style</h1>
             </div>
-
         </div>
 
     </header>
-<section id="game-section">
-    <div class="container">
-        <div id="game-stats">
-            <h3>Press any key to get started!</h3>
-            <h3>Wins:</h3>
-            <h3>Number of Guesses Remaining:</h3>
-            <h3>Letters Already Guessed:</h3>
-        
+    <section id="game-section">
+        <div class="container">
+            <div id="game-stats">
+
+                    <p id="directions-text">Press any key to get started!</p>
+                    <p id="userchoice-text"></p>
+                    <p id="animalchoice-text"></p>
+                    <p id="wins-text">Wins:</p>
+                    <p id="guesses-text">Number of Guesses Remaining:</p>
+                    <p id="letters-text">Letters Already Guessed:</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-
-    
 </body>
+
 </html>
