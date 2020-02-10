@@ -8,34 +8,38 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Chicle&display=swap" rel="stylesheet">
-    <link type="text/js" src="game.js">
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
     <title>Word Guess Game</title>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div id="game">
-                <img src="assets/images/word-guess.png" alt="Word Guess">
-                <h1>Animal Style</h1>
+        <header>
+            <div class="container">
+                <div id="game">
+                    <img src="assets/images/word-guess.png" alt="Word Guess"></img>
+                    <h1>Animal Style</h1>
+                </div>
             </div>
-        </div>
 
-    </header>
-    <section id="game-section">
-        <div class="container">
-            <div id="game-stats">
-
-                    <p id="directions-text">Press any key to get started!</p>
-                    <p id="userchoice-text"></p>
-                    <p id="animalchoice-text"></p>
-                    <p id="wins-text">Wins:</p>
-                    <p id="guesses-text">Number of Guesses Remaining:</p>
-                    <p id="letters-text">Letters Already Guessed:</p>
-            </div>
-        </div>
-    </section>
-
+        </header>
+            <section id="game-section">
+                <div class="container">
+                    <div id="game-stats">
+                        <h3>Press any key to get started!</h3>
+                        <p id="directions-text"></p>
+                        <h3>Word:</h3>
+                        <p id="userchoice-text"></p>
+                        <h3></h3>
+                        <p id="animalchoice-text"></p>
+                        <h3>Wins:</h3>
+                        <p id="wins-text"></p>
+                        <h3>Number of Guesses Remaining:</h3>
+                        <p id="guesses-text"></p>
+                        <h3>Letters Already Guessed:</h3>
+                        <p id="letters-text"></p>
+                    </div>
+                </div>
+            </section>
 </body>
 
 </html>
