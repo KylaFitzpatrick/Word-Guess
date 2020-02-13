@@ -9,16 +9,18 @@ var words = [
     "WOLF",
     "CHIMPANZEE"];
 
-var videos = [
-    "ELEPHANT",
-    "TIGER",
-    "LION",
-    "COUGAR",
-    "LEOPARD",
-    "RHINO",
-    "GORILLA",
-    "WOLF",
-    "CHIMPANZEE"];
+var youtubeLinks = [
+    'https://www.youtube.com/embed/4nTHFTdzIU4',//Tiger
+    'https://www.youtube.com/embed/My1TqR_SPeI', //elephant
+    'https://www.youtube.com/embed/_sTJ5BSG66Y', //lion
+    'https://www.youtube.com/embed/q_k-iq-pTWI', //wolf
+    'https://www.youtube.com/embed/9uDV4u0lwc4', //chimp
+    'https://www.youtube.com/embed/6gIs9pvA3R0', //cougar
+    'https://www.youtube.com/embed/lAfCcj67yYE', //rhino
+    'https://www.youtube.com/embed/2mBdWmhQRE8', //leopard
+    'https://www.youtube.com/embed/0HL_UKqkmFU' //gorilla
+];
+
 
 var wins = 0;
 var guessedLetters = [];
