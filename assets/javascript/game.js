@@ -58,78 +58,50 @@ function resetGame() {
  }
     console.log("Letter to guess: " + word);
 }
+    
+
 // 5. Press any key to get started!
 // This function is run whenever the user presses a key.
 document.onkeyup = function (event) {
 
     // Determines which key was pressed.
     var userGuess = String.fromCharCode(event.keyCode).toUpperCase(); 
+    var guess = userGuess;
 
-    var remainingLetters = word.length;
-    // The game loop
-        while (remainingLetters > 0) {
-    // Show the player their progress
-        answerArray.join(" ");
-
-    // guess from user
-    if (userGuess === null) {
-        // Exit the game loop
-        break;
-        } else {
-        // display letter guessed correctly add letter in index of array
-        // if user guesses one letter equal to a letter in animal word
-            for (var i = 0; i < word.length; i++) {
-                if (word[i] === userGuess) {
-                answerArray[i] = userGuess;
-                remainingLetters--;
-                }
-            }
+    
+    //  if (guess !== "^[a-zA-Z\(\)]+$") {
+    //     alert("Please enter a single letter.");
+    //     }
+    for (var i = 0; i < word.length; i++) {       
+        if(word[i] === guess){
+        answerArray[i] = guess;
         }
     }
-    
-    if(userGuess === answerArray){
-        guessedLetters.push(userGuess);
-    }
-      // 6. Wins: (# of times user guessed the word correctly) and rest game
-    if(remainingLetters === 0){
-        wins++;
-        // resetGame();
-    // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
-    }else if(userGuess !== answerArray){
-        lettersLeft--;
-    }
-}
-    // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
+
     
 
-    // 9. After the user wins/loses the game should automatically choose another word and make the user play it.
-    // }else if(remainingLetters === 0 || lettersLeft === 0){
-    //     resetGame();
-    // }
-    
-// };
-    
-//     //find userguess letters that match animal guess
-//     //    * As the user guesses the correct letters, reveal them: `m a d o _  _ a`.
-//     function remainingLetters(){
-//     var remainingLetters = word.length;
-//     // The game loop
-//         while (remainingLetters > 0) {
-//     // Show the player their progress
-//         answerArray.join(" ");
-//     // guess from user
-//     if (userGuess === null) {
-//         // Exit the game loop
-//         break;
-//         } else {
-//         // display letter guessed correctly add letter in index of array
-//         // if user guesses one letter equal to a letter in animal word
-//             for (var i = 0; i < word.length; i++) {
-//                 if (word[i] === userGuess) {
-//                 answerArray[i] = userGuess;
-//                 remainingLetters--;
-//                 }
-//             }
-//         }
-//     }
-// }
+        // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
+        //check if characters are letters
+        if(guess !== word[i]){
+            guessedLetters.push(guess);
+            lettersLeft--;
+        }
+        // if(guess === word[i])
+        // 6. Wins: (# of times user guessed the word correctly) and rest game
+        for (var i = 0; i < word.length; i++) {
+        if(answerArray[i] === 0){
+            wins++;
+        }
+    }
+            // resetGame();
+        // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
+        // }if(guess !== answerArray[i]){
+        //     lettersLeft--;
+        // }
+        // 9. After the user wins/loses the game should automatically choose another word and make the user play it.
+        if(answerArray === word || lettersLeft === 0){
+            resetGame();
+        }
+            display();
+        };
+

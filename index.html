@@ -37,7 +37,13 @@
                     </div>
                 </div>
             </section>
-            <script type="text/javascript" src="assets/javascript/game.js" charset="UTF-8"></script>
+            <script type="text/javascript" src="assets/javascript/game.js" charset="UTF-8">
+            document.onkeyup = function() {
+            document.getElementById("wins-text").innerHTML = this.value;
+            document.getElementById("guesses-text").innerHTML = this.value;
+            document.getElementById("letters-text").innerHTML = this.value;
+            document.getElementById("answer-text").innerHTML = this.value;
+        }</script>
 </body>
 
 
