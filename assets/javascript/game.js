@@ -14,13 +14,8 @@ var words = [
 var wins = 0;
 var guessedLetters = [];
 var lettersLeft = 10;
-
-
-
 // // Randomly chooses a choice from the options array.
-var word = words[Math.floor(Math.random() * words.length)];
-
-// // * If the word is `madonna`, display it like this when the game starts: `_ _ _ _ _ _ _`.
+var word = [];
 var answerArray = [];
 
 
@@ -51,14 +46,16 @@ console.log(lettersText);
 function resetGame() {
     lettersLeft = 10;
     guessedLetters = [];
+    answerArray = [];
     word = words[Math.floor(Math.random() * words.length)];
     for (var i = 0; i < word.length; i++) {
     answerArray[i] = "_";
     console.log(answerArray[i] = "_") 
  }
     console.log("Letter to guess: " + word);
-}
-    
+} 
+
+
 
 // 5. Press any key to get started!
 // This function is run whenever the user presses a key.
@@ -67,37 +64,48 @@ document.onkeyup = function (event) {
     // Determines which key was pressed.
     var userGuess = String.fromCharCode(event.keyCode).toUpperCase(); 
     var guess = userGuess;
-
     
+     //     alert("Please enter a single letter.");
+    var letters = /^[A-Za-z]+$/;
+        if(guess.match(letters))
+        {
+        guess
+        }else{
+            alert("Please enter a letter");
+        }
     
-    //     alert("Please enter a single letter.");
+    //display guess in index of array
+    
     for (var i = 0; i < word.length; i++) {       
         if(word[i] === guess){
         answerArray[i] = guess;
         }
     }
+
      // 6. Wins: (# of times user guessed the word correctly) and rest game
-        if(answerArray !== '/^[a-zA-Z]+_/'){
+    
+        if (answerArray.join("") === word){
         wins++;
         }
-    
-    
+        if(word === "Elephant" && wins > 0){
+            
+        }
 
         // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
         // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
         //check if characters are letters
-        if(guess !== word[i]) {
+        if (guess !== word[i]){
             guessedLetters.push(guess);
             lettersLeft--;
         }
-
-        // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
-        if(lettersLeft === 0){
-            resetGame();
+        
+        if(answerArray[i] === word[i]){
+            lettersLeft++;
         }
         
-        // 9. After the user wins/loses the game should automatically choose another word and make the user play it.
-        if(answerArray === word || lettersLeft === 0){
+        // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
+        // // 9. After the user wins/loses the game should automatically choose another word and make the user play it.
+        if(answerArray.join("") === word || lettersLeft === 0){
             resetGame();
         }
             display();
