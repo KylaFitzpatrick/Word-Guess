@@ -44,7 +44,7 @@ winsText.innerHTML = wins;
 console.log(winsText);
 guessesText.innerHTML = lettersLeft;
 console.log(guessesText);
-lettersText.innerHTML = guessedLetters;
+lettersText.innerHTML = guessedLetters.join(" ");
 console.log(lettersText);
 }
 // // * If the word is `madonna`, display it like this when the game starts: `_ _ _ _ _ _ _`.
@@ -69,35 +69,33 @@ document.onkeyup = function (event) {
     var guess = userGuess;
 
     
-    //  if (guess !== "^[a-zA-Z\(\)]+$") {
+    
     //     alert("Please enter a single letter.");
-    //     }
     for (var i = 0; i < word.length; i++) {       
         if(word[i] === guess){
         answerArray[i] = guess;
         }
     }
-
+     // 6. Wins: (# of times user guessed the word correctly) and rest game
+        if(answerArray !== '/^[a-zA-Z]+_/'){
+        wins++;
+        }
+    
     
 
         // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
+        // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
         //check if characters are letters
-        if(guess !== word[i]){
+        if(guess !== word[i]) {
             guessedLetters.push(guess);
             lettersLeft--;
         }
-        // if(guess === word[i])
-        // 6. Wins: (# of times user guessed the word correctly) and rest game
-        for (var i = 0; i < word.length; i++) {
-        if(answerArray[i] === 0){
-            wins++;
-        }
-    }
-            // resetGame();
+
         // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
-        // }if(guess !== answerArray[i]){
-        //     lettersLeft--;
-        // }
+        if(lettersLeft === 0){
+            resetGame();
+        }
+        
         // 9. After the user wins/loses the game should automatically choose another word and make the user play it.
         if(answerArray === word || lettersLeft === 0){
             resetGame();
