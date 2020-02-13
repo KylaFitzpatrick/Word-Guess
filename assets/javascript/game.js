@@ -1,15 +1,24 @@
 var words = [
     "ELEPHANT",
     "TIGER",
-    "BEAR",
-    "BIRD",
-    "GIRAFFE",
-    "HORSE",
-    "PIG",
-    "SHEEP",
-    "COW"];
+    "LION",
+    "COUGAR",
+    "LEOPARD",
+    "RHINO",
+    "GORILLA",
+    "WOLF",
+    "CHIMPANZEE"];
 
-
+var videos = [
+    "ELEPHANT",
+    "TIGER",
+    "LION",
+    "COUGAR",
+    "LEOPARD",
+    "RHINO",
+    "GORILLA",
+    "WOLF",
+    "CHIMPANZEE"];
 
 var wins = 0;
 var guessedLetters = [];
@@ -33,6 +42,7 @@ var guessesText = document.getElementById("guesses-text");
 console.log(guessesText);
 var lettersText = document.getElementById("letters-text");
 console.log(lettersText);
+var videosTrackList = document.getElementsByClassName("youtube");
 answerText.innerHTML = answerArray.join(" ");
 console.log(answerText);
 winsText.innerHTML = wins;
@@ -41,6 +51,7 @@ guessesText.innerHTML = lettersLeft;
 console.log(guessesText);
 lettersText.innerHTML = guessedLetters.join(" ");
 console.log(lettersText);
+videosTrackList.innerHTML = videos;
 }
 // // * If the word is `madonna`, display it like this when the game starts: `_ _ _ _ _ _ _`.
 function resetGame() {
@@ -86,10 +97,9 @@ document.onkeyup = function (event) {
     
         if (answerArray.join("") === word){
         wins++;
+        videos.match(answerArray.join("")); 
         }
-        if(word === "Elephant" && wins > 0){
-            
-        }
+    
 
         // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
         // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
