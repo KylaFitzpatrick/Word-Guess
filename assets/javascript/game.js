@@ -99,8 +99,10 @@ document.onkeyup = function (event) {
     
         if (answerArray.join("") === word){
         wins++;
-        videos.match(answerArray.join("")); 
+        for (var i = 0; i < youtubeLinks.length; i++) {
+            thisLink = youtubeLinks[i];
         }
+    }
     
 
         // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
