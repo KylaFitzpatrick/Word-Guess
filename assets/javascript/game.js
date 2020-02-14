@@ -22,8 +22,8 @@ var youtubeLinks = [
     'https://www.youtube.com/embed/0HL_UKqkmFU' //gorilla
 ];
 
-var animalLnks =
-[youtubeLinks[0] = "TIGER",
+var animalLinks = [
+youtubeLinks[0] = "TIGER",
 youtubeLinks[1] = "ELEPHANT",
 youtubeLinks[2] = "LION",
 youtubeLinks[3] = "WOLF",
@@ -56,7 +56,7 @@ var guessesText = document.getElementById("guesses-text");
 console.log(guessesText);
 var lettersText = document.getElementById("letters-text");
 console.log(lettersText);
-var videosTrackList = document.getElementsById("youtubelinks");
+var videosText = document.getElementById("animal-links");
 answerText.innerHTML = answerArray.join(" ");
 console.log(answerText);
 winsText.innerHTML = wins;
@@ -65,7 +65,7 @@ guessesText.innerHTML = lettersLeft;
 console.log(guessesText);
 lettersText.innerHTML = guessedLetters.join(" ");
 console.log(lettersText);
-videosTrackList.innerHTML = animalLnks;
+videosText.innerHTML = animalLinks;
 }
 // // * If the word is `madonna`, display it like this when the game starts: `_ _ _ _ _ _ _`.
 function resetGame() {
@@ -110,8 +110,9 @@ document.onkeyup = function (event) {
      // 6. Wins: (# of times user guessed the word correctly) and rest game
     
         if (answerArray.join("") === word){
+        animalLinks;
         wins++;
-        animalLnks;
+        
         }
     
    
