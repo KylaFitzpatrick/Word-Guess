@@ -1,13 +1,14 @@
 var words = [
-    "ELEPHANT",
     "TIGER",
+    "ELEPHANT",
     "LION",
-    "COUGAR",
-    "LEOPARD",
-    "RHINO",
-    "GORILLA",
     "WOLF",
-    "CHIMPANZEE"];
+    "CHIMPANZEE",
+    "COUGAR",
+    "RHINO",
+    "LEOPARD",
+    "GORILLA",
+    ];
 
 var youtubeLinks = [
     'https://www.youtube.com/embed/4nTHFTdzIU4',//Tiger
@@ -20,6 +21,17 @@ var youtubeLinks = [
     'https://www.youtube.com/embed/2mBdWmhQRE8', //leopard
     'https://www.youtube.com/embed/0HL_UKqkmFU' //gorilla
 ];
+
+var animalLnks =
+[youtubeLinks[0] = "TIGER",
+youtubeLinks[1] = "ELEPHANT",
+youtubeLinks[2] = "LION",
+youtubeLinks[3] = "WOLF",
+youtubeLinks[4] = "CHIMPANZEE",
+youtubeLinks[5] = "COUGAR",
+youtubeLinks[6] = "RHINO",
+youtubeLinks[7] = "LEOPARD",
+youtubeLinks[8] = "GORILLA"];
 
 
 var wins = 0;
@@ -44,7 +56,7 @@ var guessesText = document.getElementById("guesses-text");
 console.log(guessesText);
 var lettersText = document.getElementById("letters-text");
 console.log(lettersText);
-var videosTrackList = document.getElementsByClassName("youtube");
+var videosTrackList = document.getElementsById("youtubelinks");
 answerText.innerHTML = answerArray.join(" ");
 console.log(answerText);
 winsText.innerHTML = wins;
@@ -53,7 +65,7 @@ guessesText.innerHTML = lettersLeft;
 console.log(guessesText);
 lettersText.innerHTML = guessedLetters.join(" ");
 console.log(lettersText);
-videosTrackList.innerHTML = videos;
+videosTrackList.innerHTML = animalLnks;
 }
 // // * If the word is `madonna`, display it like this when the game starts: `_ _ _ _ _ _ _`.
 function resetGame() {
@@ -99,10 +111,10 @@ document.onkeyup = function (event) {
     
         if (answerArray.join("") === word){
         wins++;
-        for (var i = 0; i < youtubeLinks.length; i++) {
-            thisLink = youtubeLinks[i];
+        animalLnks;
         }
-    }
+    
+   
     
 
         // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
