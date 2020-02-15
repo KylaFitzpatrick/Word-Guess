@@ -22,24 +22,14 @@ var youtubeLinks = [
     'https://www.youtube.com/embed/0HL_UKqkmFU' //gorilla
 ];
 
-var animalLinks = [
-youtubeLinks[0] = "TIGER",
-youtubeLinks[1] = "ELEPHANT",
-youtubeLinks[2] = "LION",
-youtubeLinks[3] = "WOLF",
-youtubeLinks[4] = "CHIMPANZEE",
-youtubeLinks[5] = "COUGAR",
-youtubeLinks[6] = "RHINO",
-youtubeLinks[7] = "LEOPARD",
-youtubeLinks[8] = "GORILLA"];
-
-
 var wins = 0;
 var guessedLetters = [];
 var lettersLeft = 10;
 // // Randomly chooses a choice from the options array.
 var word = [];
 var answerArray = [];
+var video = [];
+
 
 
 display();
@@ -56,7 +46,6 @@ var guessesText = document.getElementById("guesses-text");
 console.log(guessesText);
 var lettersText = document.getElementById("letters-text");
 console.log(lettersText);
-var videosText = document.getElementById("animal-links");
 answerText.innerHTML = answerArray.join(" ");
 console.log(answerText);
 winsText.innerHTML = wins;
@@ -65,7 +54,7 @@ guessesText.innerHTML = lettersLeft;
 console.log(guessesText);
 lettersText.innerHTML = guessedLetters.join(" ");
 console.log(lettersText);
-videosText.innerHTML = animalLinks;
+
 }
 // // * If the word is `madonna`, display it like this when the game starts: `_ _ _ _ _ _ _`.
 function resetGame() {
@@ -80,8 +69,17 @@ function resetGame() {
     console.log("Letter to guess: " + word);
 } 
 
-
-
+// listener function changes src
+      function videoWord() {
+          var video = document.getElementsByTagName('video')[0];
+          for(var i = 0; i < words.length; i++){
+            youtubeLinks[i] = words[i];
+          video.src = youtubeLinks[i];
+          video.load();
+          }
+      }
+    
+    
 // 5. Press any key to get started!
 // This function is run whenever the user presses a key.
 document.onkeyup = function (event) {
@@ -109,14 +107,10 @@ document.onkeyup = function (event) {
 
      // 6. Wins: (# of times user guessed the word correctly) and rest game
     
-        if (answerArray.join("") === word){
-        animalLinks;
-        wins++;
-        
-        }
-    
-   
-    
+            if (answerArray.join("") === word){  
+                videoWord();
+                wins++;
+            }
 
         // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
         // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
