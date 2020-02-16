@@ -11,15 +11,15 @@ var words = [
     ];
 
 var youtubeLinks = [
-    "https://www.youtube.com/embed/4nTHFTdzIU4",//Tiger
-    "https://www.youtube.com/embed/My1TqR_SPeI", //elephant
-    "https://www.youtube.com/embed/_sTJ5BSG66Y", //lion
-    "https://www.youtube.com/embed/q_k-iq-pTWI", //wolf
-    "https://www.youtube.com/embed/9uDV4u0lwc4", //chimp
-    "https://www.youtube.com/embed/6gIs9pvA3R0", //cougar
-    "https://www.youtube.com/embed/lAfCcj67yYE", //rhino
-    "https://www.youtube.com/embed/2mBdWmhQRE8", //leopard
-    "https://www.youtube.com/embed/0HL_UKqkmFU" //gorilla
+    "https://www.youtube.com/embed/4nTHFTdzIU4",
+    "https://www.youtube.com/embed/My1TqR_SPeI", 
+    "https://www.youtube.com/embed/_sTJ5BSG66Y", 
+    "https://www.youtube.com/embed/q_k-iq-pTWI", 
+    "https://www.youtube.com/embed/9uDV4u0lwc4", 
+    "https://www.youtube.com/embed/6gIs9pvA3R0", 
+    "https://www.youtube.com/embed/lAfCcj67yYE", 
+    "https://www.youtube.com/embed/2mBdWmhQRE8", 
+    "https://www.youtube.com/embed/0HL_UKqkmFU" 
 ];
 
 
@@ -29,8 +29,7 @@ var lettersLeft = 10;
 // // Randomly chooses a choice from the options array.
 var word = [];
 var answerArray = [];
-var videoLink = [];
-
+var video = [];
 
 display();
 resetGame();
@@ -46,7 +45,7 @@ var guessesText = document.getElementById("guesses-text");
 console.log(guessesText);
 var lettersText = document.getElementById("letters-text");
 console.log(lettersText);
-var youtube = document.getElementsByTagName('iframe');
+var youtube = document.getElementsByTagName("iframe");
 answerText.innerHTML = answerArray.join(" ");
 console.log(answerText);
 winsText.innerHTML = wins;
@@ -55,11 +54,10 @@ guessesText.innerHTML = lettersLeft;
 console.log(guessesText);
 lettersText.innerHTML = guessedLetters.join(" ");
 console.log(lettersText);
-youtube = videoLink;
+youtube.src = video;
 
 }
 
-videoLink = "https://www.youtube.com/embed/4nTHFTdzIU4"
 // // * If the word is `madonna`, display it like this when the game starts: `_ _ _ _ _ _ _`.
 function resetGame() {
     lettersLeft = 10;
@@ -104,32 +102,15 @@ document.onkeyup = function (event) {
      // 6. Wins: (# of times user guessed the word correctly) and rest game
 
             if (answerArray.join("") === word){ 
-                wins++;
-            }
-
-            wordIndex = words.indexOf(answerArray.join(" ").toUpperCase());
+            wordIndex = words.indexOf(word);
             console.log(wordIndex, 'word index')
 
             videoLink = youtubeLinks[wordIndex];
             console.log(videoLink, 'Video link');
-
-            if(wins > 0){
-                videoLink;
+            video.push(videoLink);
+            wins++;
             }
-
-            //if win is > 0 then display url equal to that word
-                // var wordIndex = words.indexOf(answerArray.join(" ").toUpperCase());
-                // console.log(wordIndex, 'word index')
-
-                // var videoLink = youtubeLinks[wordIndex];
-                // console.log(videoLink, 'Video link');
-
-//                 var userGuess = "LIOn";
-// console.log(userGuess.toUpperCase(), 'user guess')
-
-            
-            
-
+    
         // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
         // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
         //check if characters are letters

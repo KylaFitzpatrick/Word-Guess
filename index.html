@@ -24,21 +24,25 @@
             <section id="game-section">
                 <div class="container">
                     <div id="youtube-links">
-                            <iframe src="https://www.youtube.com/embed/My1TqR_SPeI" SameSite=None width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                                
+    <iframe src="https://www.youtube.com/embed/4nTHFTdzIU4" SameSite="None" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                             </iframe>
                     </div>
                     <div id="game-stats">
-                        <h3>Press any key to get started!</h3>
+                        <h3 id="press-key">Press any key to get started!</h3>
+                        <br>
                         <p id="directions-text"></p>
                         <h3>Word:</h3>
                         <p id="answer-text"></p>
+                        <br>
                         <h3>Wins:</h3>
                         <p id="wins-text"></p>
+                        <br>
                         <h3>Number of Guesses Remaining:</h3>
                         <p id="guesses-text"></p>
+                        <br>
                         <h3>Letters Already Guessed:</h3>
                         <p id="letters-text"></p>
+                        <br>
                     </div>
                 </div>
             </section>
@@ -48,7 +52,7 @@
             document.getElementById("guesses-text").innerHTML = this.value;
             document.getElementById("letters-text").innerHTML = this.value;
             document.getElementById("answer-text").innerHTML = this.value;
-            document.getElementsByTagName('iframe').src = this.value;
+            document.getElementsByTagName("iframe").src = this.value;
         }</script>
 </body>
 
