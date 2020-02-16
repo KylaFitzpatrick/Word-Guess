@@ -1,5 +1,4 @@
 # Word-Guess-Game
-This is a game about guessing an animal word
 
 What the project does: This is a word guess game about guessing an animal word. The number of letters will be displayed and ther will guess by typing in a letter. If the letter is not in the word then the letter will be marked in letters guessed. If the letter is not correct the number of remaining guesses decreases. If you guess the letter correctly you win and the game will start over again.
 
