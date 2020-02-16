@@ -24,11 +24,7 @@
             <section id="game-section">
                 <div class="container">
                     <div id="youtube-links">
-    
-    <!-- <video id="animal-links" width="560" height="315" src="https://www.youtube.com/embed/4nTHFTdzIU4">  -->
-        <!-- <source src="https://www.youtube.com/embed/4nTHFTdzIU4" type="video" >  -->
-                        <!-- </video> -->
-                            <iframe id="animal-links"   src="" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                            <iframe src="https://www.youtube.com/embed/My1TqR_SPeI" SameSite=None width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                                 
                             </iframe>
                     </div>
@@ -52,7 +48,7 @@
             document.getElementById("guesses-text").innerHTML = this.value;
             document.getElementById("letters-text").innerHTML = this.value;
             document.getElementById("answer-text").innerHTML = this.value;
-            document.getElementsByTagName('video')[0] = this.value;
+            document.getElementsByTagName('iframe').src = this.value;
         }</script>
 </body>
 
