@@ -102,12 +102,12 @@ document.onkeyup = function (event) {
      // 6. Wins: (# of times user guessed the word correctly) and rest game
 
             if (answerArray.join("") === word){ 
-            wordIndex = words.indexOf(word);
-            console.log(wordIndex, 'word index')
+            // var wordIndex = words.indexOf(word);
+            // console.log(wordIndex, 'word index')
 
-            videoLink = youtubeLinks[wordIndex];
-            console.log(videoLink, 'Video link');
-            video.push(videoLink);
+            // var videoLink = youtubeLinks[wordIndex];
+            // console.log(videoLink, 'Video link');
+            // video.push(videoLink);
             wins++;
             }
     
@@ -119,9 +119,10 @@ document.onkeyup = function (event) {
             lettersLeft--;
         }
         
-        if(answerArray[i] === word[i]){
-            lettersLeft++;
-        }
+        // if(answerArray[i] !== word[i]){
+        //     lettersLeft--;
+        // }
+       
         
         // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
         // // 9. After the user wins/loses the game should automatically choose another word and make the user play it.
