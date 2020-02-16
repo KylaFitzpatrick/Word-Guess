@@ -1,2 +1,2 @@
 # Word-Guess-Game
-This is a game about guessing a 90's word
+This is a game about guessing an animal word
