@@ -55,7 +55,7 @@ console.log(guessesText);
 lettersText.innerHTML = guessedLetters.join(" ");
 console.log(lettersText);
 youtube.src = video;
-
+console.log(youtube.src);
 }
 
 // // * If the word is `madonna`, display it like this when the game starts: `_ _ _ _ _ _ _`.
@@ -98,31 +98,28 @@ document.onkeyup = function (event) {
         answerArray[i] = guess;
         }
     }
+        
+    
 
      // 6. Wins: (# of times user guessed the word correctly) and rest game
 
             if (answerArray.join("") === word){ 
-            // var wordIndex = words.indexOf(word);
-            // console.log(wordIndex, 'word index')
+            var wordIndex = words.indexOf(word);
+            console.log(wordIndex, 'word index')
 
-            // var videoLink = youtubeLinks[wordIndex];
-            // console.log(videoLink, 'Video link');
-            // video.push(videoLink);
+            var videoLink = youtubeLinks[wordIndex];
+            console.log(videoLink, 'Video link');
+            video.push(videoLink);
             wins++;
             }
     
         // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
         // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
         //check if characters are letters
-        if (guess !== word[i]){
+        if (guess === word[i]){
             guessedLetters.push(guess);
             lettersLeft--;
         }
-        
-        // if(answerArray[i] !== word[i]){
-        //     lettersLeft--;
-        // }
-       
         
         // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
         // // 9. After the user wins/loses the game should automatically choose another word and make the user play it.
