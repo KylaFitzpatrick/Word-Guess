@@ -116,7 +116,7 @@ document.onkeyup = function (event) {
         // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
         // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
         //check if characters are letters
-        if (guess === word[i]){
+        if (guess !== word[i]){
             guessedLetters.push(guess);
             lettersLeft--;
         }
