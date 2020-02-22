@@ -30,6 +30,7 @@ var lettersLeft = 10;
 var word = [];
 var answerArray = [];
 var videoLink = "https://www.youtube.com/embed/hlWiI4xVXKY";
+var startGame = true;
 
 display();
 resetGame();
@@ -71,25 +72,29 @@ function resetGame() {
     console.log("Letter to guess: " + word);
 } 
 
-
-
- 
 // 5. Press any key to get started!
 // This function is run whenever the user presses a key.
 document.onkeyup = function (event) {
 
     // Determines which key was pressed.
     var userGuess = String.fromCharCode(event.keyCode).toUpperCase(); 
-    var guess = userGuess;
     
-     //     alert("Please enter a single letter.");
+    var guess = userGuess;
+        
+    // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
+    // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
+    //check if characters are letters
+     //   alert("Please enter a single letter.");
     var letters = /^[A-Za-z]+$/;
-        if(guess.match(letters))
-        {
-        guess
-        }else{
+        if(guess.length === 1 && guess.match(letters)){
+            if(guess !== word[i]){
+                    guessedLetters.push(guess);
+                    lettersLeft--; 
+        }
+    }else{
             alert("Please enter a letter");
         }
+    
     
     //display guess in index of array
     
@@ -98,6 +103,7 @@ document.onkeyup = function (event) {
         answerArray[i] = guess;
         }
     }
+    
         
     if(videoLink === ""){
         videoLink;
@@ -113,20 +119,12 @@ document.onkeyup = function (event) {
             console.log(videoLink, 'Video link');
             wins++;
             }
-    
-        // 8. Letters Already Guessed: (Letters the user has guessed, displayed like `L Z Y H`).
-        // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
-        //check if characters are letters
-        if (guess !== word[i]){
-            guessedLetters.push(guess);
-            lettersLeft--;
-        }
         
-        // 7. Number of Guesses Remaining: (# of guesses remaining for the user).
         // // 9. After the user wins/loses the game should automatically choose another word and make the user play it.
         if(answerArray.join("") === word || lettersLeft === 0){
             resetGame();
         }
             display();
+        
         };
 
