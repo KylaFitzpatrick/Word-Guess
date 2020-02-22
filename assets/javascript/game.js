@@ -29,7 +29,7 @@ var lettersLeft = 10;
 // // Randomly chooses a choice from the options array.
 var word = [];
 var answerArray = [];
-var video = [];
+var videoLink = "https://www.youtube.com/embed/hlWiI4xVXKY";
 
 display();
 resetGame();
@@ -45,7 +45,7 @@ var guessesText = document.getElementById("guesses-text");
 console.log(guessesText);
 var lettersText = document.getElementById("letters-text");
 console.log(lettersText);
-var youtube = document.getElementsByTagName("iframe");
+var youtube = document.getElementsByTagName("iframe")[0];
 answerText.innerHTML = answerArray.join(" ");
 console.log(answerText);
 winsText.innerHTML = wins;
@@ -54,7 +54,7 @@ guessesText.innerHTML = lettersLeft;
 console.log(guessesText);
 lettersText.innerHTML = guessedLetters.join(" ");
 console.log(lettersText);
-youtube.src = video;
+youtube.src = videoLink;
 console.log(youtube.src);
 }
 
@@ -99,7 +99,9 @@ document.onkeyup = function (event) {
         }
     }
         
-    
+    if(videoLink === ""){
+        videoLink;
+    }
 
      // 6. Wins: (# of times user guessed the word correctly) and rest game
 
@@ -107,9 +109,8 @@ document.onkeyup = function (event) {
             var wordIndex = words.indexOf(word);
             console.log(wordIndex, 'word index')
 
-            var videoLink = youtubeLinks[wordIndex];
+            videoLink = youtubeLinks[wordIndex];
             console.log(videoLink, 'Video link');
-            video.push(videoLink);
             wins++;
             }
     
