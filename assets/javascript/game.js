@@ -30,12 +30,13 @@ var lettersLeft = 10;
 var word = [];
 var answerArray = [];
 var videoLink = "https://www.youtube.com/embed/hlWiI4xVXKY";
-var startGame = true;
 
 display();
 resetGame();
 
-window.addEventListener('load', display, false);
+var oneTime = true;
+//window.onload=display
+//window.addEventListener('load', display, false);
 
 function display(){
 var answerText = document.getElementById("answer-text");
@@ -55,7 +56,11 @@ guessesText.innerHTML = lettersLeft;
 console.log(guessesText);
 lettersText.innerHTML = guessedLetters.join(" ");
 console.log(lettersText);
+
+if(oneTime === true){
 youtube.src = videoLink;
+oneTime = false;
+}
 console.log(youtube.src);
 }
 
@@ -87,11 +92,11 @@ document.onkeyup = function (event) {
      //   alert("Please enter a single letter.");
     var letters = /^[A-Za-z]+$/;
         if(guess.length === 1 && guess.match(letters)){
-            if(guess !== word[i]){
+        if(word.indexOf(guess) === -1){
                     guessedLetters.push(guess);
                     lettersLeft--; 
-        }
-    }else{
+                }
+        }else{
             alert("Please enter a letter");
         }
     
