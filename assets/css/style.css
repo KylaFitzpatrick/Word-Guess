@@ -3,13 +3,29 @@ body{
     /* background-image: url("../images/wood_pattern.png");  */
     background-color:lightskyblue;
 }
-
-
+.responsive {
+    width: 100%;
+    height: auto;
+  }
+  .video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
 .container{
     margin: 0 auto;
     float: center;
     justify-content: center;
     text-align: center;
+    width:60%;
 }
 h1{
     font-size: 50px;
@@ -18,21 +34,21 @@ h1{
 }
 h3, p{
     padding: 20px;
-    font-size: 50px;
+    font-size: 30px;
     display: inline;
     color: green;
 }
 
 #game-section h3{
     font-family: 'Chicle', cursive;
-    font-size: 50px;
+    font-size: 30px;
     
 }
 .container #game-stats {
     border-style: dashed;
     border-width: 10px;
-    width: 800px;
-    height: 300px;
+    /* width: 800px;
+    height: 300px; */
     margin: 0 auto;
     padding: 10px;
     /* text-align: left; */
