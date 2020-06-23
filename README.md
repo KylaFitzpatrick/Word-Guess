@@ -1,6 +1,6 @@
 # Word-Guess-Game
 
-![GitHub Logo](/images/word_guess.png)
+(/images/word_guess.png)
 
 ### The problem:
 Creating a word guess game using javascript, html and css.
