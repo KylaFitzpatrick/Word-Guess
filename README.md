@@ -1,5 +1,7 @@
 # Word-Guess-Game
 
+![Alt text](/images/word-guess.png)
+
 ### The problem:
 Creating a word guess game using javascript, html and css.
 
