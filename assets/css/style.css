@@ -1,6 +1,5 @@
 body{
     font-family: 'Chicle', cursive;
-    /* background-image: url("../images/wood_pattern.png");  */
     background-color:lightskyblue;
 }
 .responsive {
@@ -25,7 +24,7 @@ body{
     float: center;
     justify-content: center;
     text-align: center;
-    width:60%;
+    width:80%;
 }
 h1{
     font-size: 50px;
